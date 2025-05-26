@@ -1,0 +1,16 @@
+alias stowbash='stow --dotfiles bash'
+color-guide() {
+    local color=0;
+
+    echo "0-7 is common colors, 8-15 is bright colors"
+    echo "common colors can be specially set with ESC[30-37m"
+    echo "bright colors can be specially set with ESC[1;30-37m or sometimes ESC[90-97"
+    echo "ESC[38;5;<color>m will set foreground"
+    echo "ESC[48;5;<color>m will set background"
+    echo "for shell prompt the closing \] is important for character counting reasons"
+
+    while [ $color -lt 256 ]; do
+        echo -e "$color: \\033[38;5;${color}mhello\\033[48;5;${color}mworld\\033[0m"
+	((color++));
+    done
+}
