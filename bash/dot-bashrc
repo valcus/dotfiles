@@ -112,6 +112,12 @@ if [ -f ~/.bash_prompt ]; then
     . ~/.bash_prompt
 fi
 
+# auth tokens
+# seems like a nice place to put some tokens
+if [ -f ~/.bash_tokens ]; then
+  . ~/.bash_tokens
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -123,9 +129,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# golang
 PATH=$PATH:/usr/local/go/bin
 
-
+# node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
