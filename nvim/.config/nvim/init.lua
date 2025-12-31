@@ -729,6 +729,9 @@ require('lazy').setup({
             },
           },
         },
+        -- sometimes html files arent identified properly
+        -- :set filetype=html
+        html = {},
       }
 
       -- Ensure the servers and tools above are installed
